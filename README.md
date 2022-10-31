@@ -1,15 +1,14 @@
+## Know when to use panic and when not to.
+
 `defer` runs in rever order, i.e the defer statement defined last will be executed first
 
-### When to use panic
-
-For serious issue in a major part of the code is buggy and like on startup of when it needs to connect to important service to work, then its okay to panic
+when to use panic : For serious issue in a major part of the code is buggy and like on startup of when it needs to connect to important service to work, then its okay to panic
 
 
-### When not to panic
+## Using recover if you want to recover from failure 
 
-When working with third party code which you do not have control over and issues with this do not want to crash the entire application.
+When not to `recover`: When working with third party code which you do not have control over and issues with this do not want to crash the entire application.
 
-### Using recover
 
 `recover` : recover listens to panics and regains cotrol of execution, keeping application up and letting the flow continue.
 
@@ -19,9 +18,7 @@ check if some panic happened.
 This way it will handle error and not crash the application.
 
 
-### Note:
-
-`Recovers only work if the panic happens on the same routine as they were defined.`
+Note: `Recovers only work if the panic happens on the same routine as they were defined.`
 
 ```
 package main
