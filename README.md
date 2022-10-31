@@ -56,7 +56,7 @@ func main() {
 In the above code, main called start function which again called thirdpartyfuction. Now a panic occured in thirdPartyFunction, when this happens, panic checks if there are any defer functions and exucutes them. Since there is not any it kills the function, and flow is retured to start, and when start panics, it checks any defer and executes them. There is one and hence it executes. In our defer we have implemented recover hence it recovers from panic by stopping panic from killsing the function. Flow is then passed back to main function which continuees and exits gracefully 
 
 
-## Only os.Exit in main.
+## Only os.Exit in main, all other function should return an error
 
 `log.Fatal` or `panic` called OS.Exit. All other functions should should return and error and handled gracefully
 
