@@ -38,6 +38,6 @@ func main() {
 
 	err := errorReturningFucntion(flag)
 	if err != nil {
-		log.Fatal("Error occured in function errorReturningFunction", err)
+		log.Fatalf("Error occured while calling function ReturningFunction: %v", err)
 	}
 }

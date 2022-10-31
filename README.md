@@ -71,7 +71,7 @@ func main() {
 
 	err := errorReturningFucntion(flag)
 	if err != nil {
-		log.Fatal("Error occured in function errorReturningFunction", err)
+		log.Fatalf("Error occured while calling function ReturningFunction: %v", err)
 	}
 }
 ```
@@ -79,6 +79,6 @@ func main() {
 which gives you good formatted output and graceful exit
 
 ```
-2022/10/31 10:25:26 Error occured in function errorReturningFunctionflag is set to false
+2022/10/31 10:41:53 Error occured while calling function ReturningFunction: flag is set to false 
 exit status 1
 ```
